@@ -10,15 +10,10 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource{
  
+  
+    @IBOutlet weak var tabBar: UITabBar!
     
-    let arrayOfCategories = [" Movies", " TV-Shows"]
-//    let layout = UICollectionViewFlowLayout()
-    
-
-    
-
-    var indexPathRow : Int?
-    
+   
     @IBOutlet weak var sortBarItem: UIBarButtonItem! {
         didSet {
             let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
@@ -40,14 +35,15 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         TableView.backgroundColor = .black
         view.backgroundColor = .black
         
-      
+        tabBar.delegate = self
+        
 
       
 
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfCategories.count
+        return 2
     }
     
     
@@ -79,22 +75,6 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return UITableViewCell()
     }
     
-    
-//
-//   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
-//    {
-//
-//        if let cell = cell as? MoviesTableViewCell {
-//            cell.moviesCollectionView.dataSource = self
-//            cell.moviesCollectionView.delegate = self
-//                cell.moviesCollectionView.reloadData()
-//        }
-//
-//
-//
-//
-//    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt
     indexPath: IndexPath) -> CGFloat
     {
@@ -112,10 +92,16 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("sortBarItem Tapped")
 
     }
+ 
+    
+    
+    
     
     
     
 }
+
+// MARK:- Extension For UICollectionViewDataSource
 
 extension HomeController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     override func viewWillAppear(_ animated: Bool) {
@@ -185,6 +171,19 @@ extension HomeController : UICollectionViewDataSource, UICollectionViewDelegate,
 
     }
     
+    
+}
+
+// MARK:- Extension For UITabBarDelegate
+extension HomeController : UITabBarDelegate {
+    
+     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if tabBar.selectedItem?.tag == 1 {
+            
+        } else if tabBar.selectedItem?.tag == 2 {
+            
+        }
+    }
     
 }
 
