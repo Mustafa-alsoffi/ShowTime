@@ -21,6 +21,10 @@ class TVShowsCollectionViewCell: UICollectionViewCell {
     }
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
+    
+    @IBOutlet weak var rateLabel: UILabel!
+    
     
     @IBOutlet weak var subtitleTextView: UITextView!  {
         didSet {
