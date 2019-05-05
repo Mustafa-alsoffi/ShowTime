@@ -12,11 +12,7 @@ class MoviesTableViewCell: UITableViewCell{
 
     
 
-    @IBOutlet weak var moviesCollectionView: UICollectionView! {
-        didSet {
-            moviesCollectionView.backgroundColor = .black
-        }
-    }
+    @IBOutlet weak var moviesCollectionView: UICollectionView!
     
  
     

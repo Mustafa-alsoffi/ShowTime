@@ -11,10 +11,7 @@ import AVFoundation
 
 class VidTableVCell: UITableViewCell {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    
-    }
+ 
 
     let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .whiteLarge)
@@ -58,7 +55,7 @@ class VidTableVCell: UITableViewCell {
     lazy var videoSlider: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.minimumTrackTintColor = .red
+        slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .white
         slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
         
@@ -101,7 +98,9 @@ class VidTableVCell: UITableViewCell {
     
     let controlsContainerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(white: 0, alpha: 1)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        
+
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -114,20 +113,18 @@ class VidTableVCell: UITableViewCell {
         
         controlsContainerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         controlsContainerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        let height = frame.width * 9 / 16
+        controlsContainerView.heightAnchor.constraint(equalToConstant:height).isActive = true
         controlsContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
 
         controlsContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
-//        setupGradientLayer()
-//        setupPlayerView()
 
         controlsContainerView.addSubview(activityIndicatorView)
-        
-      
-        
-        
         activityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         activityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        
         
         controlsContainerView.addSubview(pausePlayButton)
         pausePlayButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -153,7 +150,6 @@ class VidTableVCell: UITableViewCell {
         videoSlider.leftAnchor.constraint(equalTo: currentTimeLabel.rightAnchor).isActive = true
         videoSlider.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
-        backgroundColor = .clear
     }
     
     

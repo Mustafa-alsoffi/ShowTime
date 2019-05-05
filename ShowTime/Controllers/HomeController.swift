@@ -10,8 +10,36 @@ import UIKit
 
 class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
+    let tVShowsBarItem : UITabBarItem = {
+        let barItem = UITabBarItem()
+        barItem.title = "TV Shows"
+        return barItem
+    }()
     
-    @IBOutlet weak var tabBar: UITabBar!
+    let moviesBarItem : UITabBarItem = {
+        let barItem = UITabBarItem()
+        barItem.title = "Movies"
+        barItem.image = #imageLiteral(resourceName: "Moviesicon")
+        barItem.badgeTextAttributes(for: .normal)
+        return barItem
+    }()
+    let tabBar: UITabBar = {
+        let tabBar = UITabBar()
+        
+        tabBar.layer.cornerRadius = 30
+        tabBar.layer.masksToBounds = true
+        tabBar.clipsToBounds = true
+        tabBar.itemPositioning = .automatic
+        
+        
+        return tabBar
+    } ()
+    
+
+    var layer: CALayer {
+        return tabBar.layer
+    }
+    
     
     
     // customizing the bar button item here
@@ -30,28 +58,36 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
         TableView.delegate = self
         TableView.dataSource = self
         TableView.separatorStyle = .none
-        TableView.backgroundColor = .black
-        view.backgroundColor = .black
         tabBar.delegate = self
+
+       
+        setupViews()
+
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
+        let height = view.frame.height / 3
+
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! MoviesTableViewCell
             cell.moviesCollectionView.dataSource = self
             cell.moviesCollectionView.delegate = self
             cell.moviesCollectionView.tag = indexPath.row
+            cell.moviesCollectionView.heightAnchor.constraint(equalToConstant: height).isActive = true
             cell.categoriesLabel.text = " Movies"
             
             return cell
@@ -61,20 +97,31 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.TVShowsCollectionView.dataSource = self
             cell.TVShowsCollectionView.delegate = self
             cell.TVShowsCollectionView.tag = indexPath.row
+            cell.TVShowsCollectionView.heightAnchor.constraint(equalToConstant: height).isActive = true
             cell.categoryLabel.text = " TV-Shows"
             
             return cell
+        } else if indexPath.row == 2 {
+            // This cell is for giving a space to tab bar at the end of the table
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell3")
+            cell?.backgroundColor = .black
+            let tabBarHeight = self.tabBar.frame.height + 10
+            cell?.heightAnchor.constraint(equalToConstant: tabBarHeight).isActive = true
+   
+//            cell?.selectionStyle = .none
+            return cell!
         }
         
         
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt
-        indexPath: IndexPath) -> CGFloat
-    {
-        return tableView.bounds.height / 2
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 2 {
+//            tableView.
+//        }
     }
+    
     
     // bar item's functions
     
@@ -88,10 +135,23 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    
-    
+    // setup view for tabbar
+    func setupViews() {
+        let bottomOfView = view.frame.maxY - 70
+        
+        let width = view.frame.width - 10
+        let height = view.frame.width / 15
+        tabBar.frame = CGRect(x: 5, y: bottomOfView, width: width, height: height)
+
+
+        tabBar.setItems([tVShowsBarItem, moviesBarItem], animated: false)
+
+        view.addSubview(tabBar)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
         if segue.identifier == "TheSelectedCategory" {
         let destinationVC = segue.destination as! SelectedCategoryVC
         
