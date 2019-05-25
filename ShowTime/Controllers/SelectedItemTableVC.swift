@@ -59,12 +59,12 @@ class SelectedItemTableVC: UITableViewController {
             setupPlayerView(cell: cell)
             player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
             setupGradientLayer(cell: cell)
+            
             return cell
         } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DiscriptionCell", for: indexPath) as! DetailsTableVCell
             
-            //            let tap = UITapGestureRecognizer(target: self , action: #selector(expendTextView))
-            //            cell.descriptionTextView.addGestureRecognizer(tap)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DiscriptionCell", for: indexPath) as! DetailsTableVCell
+
             
             return cell
         }
@@ -169,7 +169,6 @@ class SelectedItemTableVC: UITableViewController {
                 cell.videoSlider.value = Float(seconds / durationSeconds)
                 let sliderValue = cell.videoSlider.value
                 let value = Float64(sliderValue) * durationSeconds
-                print("Here is your value\(value)")
                 self.currentSecondsText = String(format: "%02d", Int(value) % 60)
                 self.currentMinText = String(format: "%02d", Int(value) / 60)
                 cell.currentTimeLabel.text = "\(self.currentMinText!):\(self.currentSecondsText!)"
@@ -181,14 +180,6 @@ class SelectedItemTableVC: UITableViewController {
         
 
     }
-    
-//    func removePeriodicTimeObserver() {
-//        // If a time observer exists, remove it
-//        if let token = player. {
-//            player.removeTimeObserver(token)
-//            timeObserverToken = nil
-//        }
-//    }
 
     
     
@@ -207,14 +198,19 @@ class SelectedItemTableVC: UITableViewController {
     
     @objc func handlePause(_ pausePlayButton : UIButton) {
         isPlaying = !isPlaying
-
         if isPlaying {
             player?.pause()
             pausePlayButton.setImage(UIImage(named: "play"), for: .normal)
             
+        } else if player?.currentItem?.duration == player?.currentItem?.currentTime() {
+            player?.seek(to: CMTime.zero)
+            player?.play()
+         pausePlayButton.setImage(UIImage(named: "pause"), for: .normal)
         } else {
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! VidTableVCell
             player?.play()
             pausePlayButton.setImage(UIImage(named: "pause"), for: .normal)
+            hideViewsWithAnimation(view: cell.controlsContainerView)
         }
         
     }
@@ -222,7 +218,6 @@ class SelectedItemTableVC: UITableViewController {
     
     @objc func handleSliderChange(_ slider : UISlider) {
         
-
      
         if let duration = player?.currentItem?.duration {
             let totalSeconds = CMTimeGetSeconds(duration)
@@ -277,6 +272,9 @@ class SelectedItemTableVC: UITableViewController {
             }
             
         }
+        
+        playbackAndShowControls(using: cell.pausePlayButton)
+        
 //        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem, queue: .main) { [weak self] _ in
 //            self?.player?.seek(to: CMTime.zero)
 //            self?.player?.play()
@@ -284,6 +282,12 @@ class SelectedItemTableVC: UITableViewController {
         
     }
     
+    func playbackAndShowControls (using button : UIButton) {
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem, queue: .main) { _ in
+            
+               button.setImage(#imageLiteral(resourceName: "playback"), for: .normal)
+                }
+    }
     
     func hideViewsWithAnimation(view : UIView) {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in

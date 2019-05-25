@@ -16,6 +16,7 @@
 		F607C3382265072E008D4FAD /* ItemBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607C3372265072E008D4FAD /* ItemBank.swift */; };
 		F607C33E226713E0008D4FAD /* SelectedItemTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607C33D226713E0008D4FAD /* SelectedItemTableVC.swift */; };
 		F607C3402267C69C008D4FAD /* vidTableVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607C33F2267C69C008D4FAD /* vidTableVCell.swift */; };
+		F67CF68C2299D36400B13C8A /* MovieServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67CF68B2299D36400B13C8A /* MovieServiceAPI.swift */; };
 		F682F17D226FCBBC00398D23 /* DetailsTableVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F682F17C226FCBBC00398D23 /* DetailsTableVCell.swift */; };
 		F690999922764D48003C4FC4 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F690999822764D48003C4FC4 /* WelcomeVC.swift */; };
 		F6D452D22261E57B0019E8D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D452D12261E57B0019E8D2 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		F607C3372265072E008D4FAD /* ItemBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBank.swift; sourceTree = "<group>"; };
 		F607C33D226713E0008D4FAD /* SelectedItemTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedItemTableVC.swift; sourceTree = "<group>"; };
 		F607C33F2267C69C008D4FAD /* vidTableVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vidTableVCell.swift; sourceTree = "<group>"; };
+		F67CF68B2299D36400B13C8A /* MovieServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceAPI.swift; sourceTree = "<group>"; };
 		F682F17C226FCBBC00398D23 /* DetailsTableVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableVCell.swift; sourceTree = "<group>"; };
 		F690999822764D48003C4FC4 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		F6D452CE2261E57B0019E8D2 /* ShowTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,7 @@
 			children = (
 				F607C3322263B35A008D4FAD /* Item.swift */,
 				F607C3372265072E008D4FAD /* ItemBank.swift */,
+				F67CF68B2299D36400B13C8A /* MovieServiceAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				F607C32F22636CFB008D4FAD /* Extensions.swift in Sources */,
 				F607C32722634E41008D4FAD /* TVShowsTableViewCell.swift in Sources */,
 				F6D452D22261E57B0019E8D2 /* AppDelegate.swift in Sources */,
+				F67CF68C2299D36400B13C8A /* MovieServiceAPI.swift in Sources */,
 				F6D452E82261F6300019E8D2 /* HomeController.swift in Sources */,
 				F607C32922635044008D4FAD /* TVShowsCollectionViewCell.swift in Sources */,
 				F607C3332263B35A008D4FAD /* Item.swift in Sources */,

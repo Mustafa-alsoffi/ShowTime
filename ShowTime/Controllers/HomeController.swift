@@ -13,6 +13,8 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let tVShowsBarItem : UITabBarItem = {
         let barItem = UITabBarItem()
         barItem.title = "TV Shows"
+        barItem.image = #imageLiteral(resourceName: "Tvshows")
+        barItem.tag = 1
         return barItem
     }()
     
@@ -20,6 +22,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let barItem = UITabBarItem()
         barItem.title = "Movies"
         barItem.image = #imageLiteral(resourceName: "Moviesicon")
+        barItem.tag = 0
         barItem.badgeTextAttributes(for: .normal)
         return barItem
     }()
@@ -30,15 +33,13 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tabBar.layer.masksToBounds = true
         tabBar.clipsToBounds = true
         tabBar.itemPositioning = .automatic
-        
-        
+        tabBar.tintColor = .white
+        tabBar.barTintColor = .darkGray
         return tabBar
     } ()
     
 
-    var layer: CALayer {
-        return tabBar.layer
-    }
+ 
     
     
     
@@ -46,7 +47,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var sortBarItem: UIBarButtonItem! {
         didSet {
             let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
-            button.setImage(UIImage(named: "sittings"), for: UIControl.State.normal)
+            button.setImage(UIImage(named: "filter"), for: UIControl.State.normal)
             button.addTarget(self, action: #selector(sortBarItemTapped), for: UIControl.Event.touchUpInside)
             button.frame = CGRect(x: 0, y: 0, width: 44, height: 20)
             sortBarItem.customView = button
@@ -79,7 +80,7 @@ class HomeController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let height = view.frame.height / 3
+        let height = view.frame.height / 2.50
 
         
         if indexPath.row == 0 {
@@ -204,8 +205,8 @@ extension HomeController : UICollectionViewDataSource, UICollectionViewDelegate,
             
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell2", for: indexPath) as! TVShowsCollectionViewCell
             
-            item.titleLabel.text = "Taylor TV-Show"
-            item.thumbnailImage.image = UIImage(named: "taylor_swift_profile")
+            item.titleLabel.text = "Alita"
+            item.thumbnailImage.image = UIImage(named: "Alita")
             
             return item
             

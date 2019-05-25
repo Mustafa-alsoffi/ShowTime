@@ -10,7 +10,16 @@ import UIKit
 
 class SelectedCategoryVC: UIViewController{
     
-    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var tabBar: UITabBar! {
+        didSet {
+            tabBar.layer.cornerRadius = 30
+            tabBar.layer.masksToBounds = true
+            tabBar.clipsToBounds = true
+            tabBar.itemPositioning = .automatic
+            tabBar.tintColor = .white
+
+        }
+    }
     @IBOutlet weak var collectionView: UICollectionView!
     
     var navTitle = ""
@@ -28,7 +37,7 @@ class SelectedCategoryVC: UIViewController{
         collectionView.delegate = self
         tabBar.delegate = self
         setNavigationItems ()
-        
+        setupTabBarFrame ()
     }
     
     @objc func sortButtonTapped () {
@@ -42,7 +51,7 @@ class SelectedCategoryVC: UIViewController{
     func setNavigationItems () {
         let search = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchButtonTapped)) //
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        button.setImage(UIImage(named: "sittings"), for: UIControl.State.normal)
+        button.setImage(UIImage(named: "filter"), for: UIControl.State.normal)
         button.addTarget(self, action: #selector(sortButtonTapped), for: UIControl.Event.touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 31)
         let editBarButton = UIBarButtonItem(customView: button)
@@ -114,5 +123,12 @@ extension SelectedCategoryVC : UITabBarDelegate {
             collectionView.reloadData()
         }
         
+    }
+    
+    func setupTabBarFrame () {
+        let bottomOfView = view.frame.maxY - 70
+        let width = view.frame.width - 10
+        let height = view.frame.width / 15
+        tabBar.frame = CGRect(x: 5, y: bottomOfView, width: width, height: height)
     }
 }

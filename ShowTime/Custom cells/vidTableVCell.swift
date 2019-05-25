@@ -114,8 +114,8 @@ class VidTableVCell: UITableViewCell {
         controlsContainerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         controlsContainerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        let height = frame.width * 9 / 16
-        controlsContainerView.heightAnchor.constraint(equalToConstant:height).isActive = true
+    //    let height = frame.width * 9 / 16
+       // controlsContainerView.heightAnchor.constraint(equalToConstant:height).isActive = true
         controlsContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
 
         controlsContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
