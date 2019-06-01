@@ -38,3 +38,28 @@ extension URLSession {
         }
     }
 }
+
+
+extension UIImage {
+    
+    convenience init?(url: URL?) {
+        guard let url = url else { return nil }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            self.init(data: data)
+        } catch {
+            print("Cannot load image from url: \(url) with error: \(error)")
+            return nil
+        }
+    }
+    
+}
+
+extension Date {
+    func asString(style: DateFormatter.Style) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = style
+        return dateFormatter.string(from: self)
+    }
+}

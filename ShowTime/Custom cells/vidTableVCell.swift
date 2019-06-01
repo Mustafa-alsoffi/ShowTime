@@ -28,7 +28,6 @@ class VidTableVCell: UITableViewCell {
         button.tintColor = .white
         button.isHidden = true
         
-//        button.addTarget(self, action: #selector(handlePause), for: .touchUpInside)
         
         return button
     }()
@@ -58,43 +57,11 @@ class VidTableVCell: UITableViewCell {
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .white
         slider.setThumbImage(UIImage(named: "thumb"), for: .normal)
-        
-//        slider.addTarget(self, action: #selector(handleSliderChange), for: .valueChanged)
+
         
         return slider
     }()
-//
-//    @objc func handleSliderChange() {
-//        print(videoSlider.value)
-//
-//        if let duration = player?.currentItem?.duration {
-//            let totalSeconds = CMTimeGetSeconds(duration)
-//
-//            let value = Float64(videoSlider.value) * totalSeconds
-//
-//            let seekTime = CMTime(value: Int64(value), timescale: 1)
-//
-//            player?.seek(to: seekTime, completionHandler: { (completedSeek) in
-//                //perhaps do something later here
-//            })
-//        }
-//
-//
-//    }
-    
-//    var isPlaying = false
-//
-//    @objc func handlePause() {
-//        if isPlaying {
-//            player?.pause()
-//            pausePlayButton.setImage(UIImage(named: "play"), for: .normal)
-//        } else {
-//            player?.play()
-//            pausePlayButton.setImage(UIImage(named: "pause"), for: .normal)
-//        }
-//
-//        isPlaying = !isPlaying
-//    }
+
     
     let controlsContainerView: UIView = {
         let view = UIView()
@@ -114,8 +81,7 @@ class VidTableVCell: UITableViewCell {
         controlsContainerView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         controlsContainerView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-    //    let height = frame.width * 9 / 16
-       // controlsContainerView.heightAnchor.constraint(equalToConstant:height).isActive = true
+ 
         controlsContainerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
 
         controlsContainerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
@@ -152,80 +118,7 @@ class VidTableVCell: UITableViewCell {
         
     }
     
-    
-//    private func setupPlayerView() {
-//        //warning: use your own video url here, the bandwidth for google firebase storage will run out as more and more people use this file
-//        let urlString = "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
-//        if let url = URL(string: urlString) {
-//            let asset = AVAsset(url: url)
-//            let playerItem = AVPlayerItem(asset: asset)
-//
-//            player = AVPlayer(playerItem: playerItem)
-//
-//            let playerLayer = AVPlayerLayer(player: player)
-//            playerLayer.videoGravity = .resizeAspectFill
-//            playerLayer.masksToBounds = true
-//
-//            playerLayer.frame = controlsContainerView.bounds
-//
-//            controlsContainerView.layer.addSublayer(playerLayer)
-//
-//
-//
-//
-////            player?.play()
-//
-//            player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
-//
-//            //track player progress
-//
-//            let interval = CMTime(value: 1, timescale: 2)
-//            player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
-//
-//                let seconds = CMTimeGetSeconds(progressTime)
-//                let secondsString = String(format: "%02d", seconds.truncatingRemainder(dividingBy: 60))
-//                let minutesString = String(format: "%02d", seconds.truncatingRemainder(dividingBy: 60))
-//
-//                self.currentTimeLabel.text = "\(minutesString):\(secondsString)"
-//
-//                //lets move the slider thumb
-//                if let duration = self.player?.currentItem?.duration {
-//                    let durationSeconds = CMTimeGetSeconds(duration)
-//
-//                    self.videoSlider.value = Float(seconds / durationSeconds)
-//
-//                }
-//
-//            })
-//        }
-//    }
-    
-//    private func setupGradientLayer() {
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = bounds
-//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradientLayer.locations = [0.0, 1.0]
-//        controlsContainerView.layer.addSublayer(gradientLayer)
-//    }
-    
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        //this is when the player is ready and rendering frames
-//        if keyPath == "currentItem.loadedTimeRanges" {
-//            activityIndicatorView.stopAnimating()
-//            controlsContainerView.backgroundColor = .clear
-//            pausePlayButton.isHidden = false
-//            isPlaying = true
-//
-//            if let duration = player?.currentItem?.duration {
-//                let seconds = CMTimeGetSeconds(duration)
-//
-//                let secondsText = Int(seconds) % 60
-//                let minutesText = String(format: "%02d", Int(seconds) / 60)
-//                videoLengthLabel.text = "\(minutesText):\(secondsText)"
-//            }
-//        }
-//    }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

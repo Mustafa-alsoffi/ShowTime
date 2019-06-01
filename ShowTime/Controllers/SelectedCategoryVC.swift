@@ -23,12 +23,7 @@ class SelectedCategoryVC: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     var navTitle = ""
-    let dataServer = ItemBank()
-    
-    var thumbnailImage = ""
-    var titleText = ""
-    var rating = ""
-    var subtitleText = ""
+    var moviesArr : [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,15 +61,17 @@ class SelectedCategoryVC: UIViewController{
 // MARK:- CollectionViewDate 
 extension SelectedCategoryVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return moviesArr.count 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let item = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedCateCollectionvCell", for: indexPath) as! SelectedCateCollectionVCell
-        item.thumbnailImage.image = UIImage(named: self.thumbnailImage)
+        item.titleLabel.text = moviesArr[indexPath.row].title
+        item.rateLabel.text = String(moviesArr[indexPath.row].voteAverage)
         
-        item.titleLabel.text = self.titleText
+        
+        item.thumbnailImage.image = UIImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(self.moviesArr[indexPath.row].posterPath)"))
         return item
     }
     
@@ -109,17 +106,10 @@ extension SelectedCategoryVC : UICollectionViewDelegate, UICollectionViewDataSou
 extension SelectedCategoryVC : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if tabBar.selectedItem?.tag == 0 {
-            self.thumbnailImage = dataServer.dataArray[(tabBar.selectedItem?.tag)!].thumbnailImage!
-            self.titleText = dataServer.dataArray[(tabBar.selectedItem?.tag)!].titleText!
-            self.rating = dataServer.dataArray[(tabBar.selectedItem?.tag)!].ratingLabel!
-            self.subtitleText = dataServer.dataArray[(tabBar.selectedItem?.tag)!].subtitleText!
+
             collectionView.reloadData()
             
         } else if tabBar.selectedItem?.tag == 1 {
-            self.thumbnailImage = dataServer.dataArray[(tabBar.selectedItem?.tag)!].thumbnailImage!
-            self.titleText = dataServer.dataArray[(tabBar.selectedItem?.tag)!].titleText!
-            self.rating = dataServer.dataArray[(tabBar.selectedItem?.tag)!].ratingLabel!
-            self.subtitleText = dataServer.dataArray[(tabBar.selectedItem?.tag)!].subtitleText!
             collectionView.reloadData()
         }
         

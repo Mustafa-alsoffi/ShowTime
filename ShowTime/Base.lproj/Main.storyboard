@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <color key="backgroundColor" red="0.066604536800000003" green="0.066604536800000003" blue="0.066604536800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z4h-Nt-XFJ" secondAttribute="bottom" constant="8" id="2hP-cy-ZqP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5YQ-fI-mnw" secondAttribute="trailing" id="77a-tM-Wfg"/>
@@ -101,8 +101,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lx2-cZ-y26">
                                 <rect key="frame" x="0.0" y="116" width="320" height="364"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableCell" rowHeight="300" id="kPK-MK-6ER" customClass="MoviesTableViewCell" customModule="ShowTime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="300"/>
@@ -113,14 +113,17 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Movies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQH-3j-XmQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="shadowColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2OO-uN-9Og">
-                                                    <rect key="frame" x="0.0" y="33" width="320" height="266.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <rect key="frame" x="0.0" y="32" width="320" height="267.5"/>
+                                                    <color key="backgroundColor" red="0.06660453680203049" green="0.06660453680203049" blue="0.06660453680203049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Odd-h4-ABe">
                                                         <size key="itemSize" width="138" height="220"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -129,19 +132,19 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="jq8-Ng-jEm" customClass="MoviesCollectionViewCell" customModule="ShowTime" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="23.5" width="138" height="220"/>
+                                                            <rect key="frame" x="0.0" y="24" width="138" height="220"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="220"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sO-tf-3Bc">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="154"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="134"/>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9b-e3-Gc8">
-                                                                        <rect key="frame" x="0.0" y="158" width="138" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venom" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9b-e3-Gc8">
+                                                                        <rect key="frame" x="0.0" y="138" width="138" height="40"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="20" id="DBg-VA-iMe"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="DBg-VA-iMe"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -200,17 +203,20 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            <color key="tintColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="XQH-3j-XmQ" firstAttribute="top" secondItem="YIZ-9q-c3Q" secondAttribute="top" id="OQ5-4s-QWr"/>
                                                 <constraint firstAttribute="trailing" secondItem="XQH-3j-XmQ" secondAttribute="trailing" id="OYI-vg-0Vf"/>
-                                                <constraint firstItem="2OO-uN-9Og" firstAttribute="top" secondItem="XQH-3j-XmQ" secondAttribute="bottom" constant="1" id="UyR-HN-4tR"/>
+                                                <constraint firstItem="2OO-uN-9Og" firstAttribute="top" secondItem="XQH-3j-XmQ" secondAttribute="bottom" id="UyR-HN-4tR"/>
                                                 <constraint firstItem="2OO-uN-9Og" firstAttribute="leading" secondItem="YIZ-9q-c3Q" secondAttribute="leading" id="fde-4F-7lA"/>
                                                 <constraint firstAttribute="bottom" secondItem="2OO-uN-9Og" secondAttribute="bottom" id="hSt-N5-7At"/>
                                                 <constraint firstAttribute="trailing" secondItem="2OO-uN-9Og" secondAttribute="trailing" id="ntk-J1-aor"/>
                                                 <constraint firstItem="XQH-3j-XmQ" firstAttribute="leading" secondItem="YIZ-9q-c3Q" secondAttribute="leading" id="uLD-uQ-a7D"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="categoriesLabel" destination="XQH-3j-XmQ" id="RM4-zY-lEq"/>
                                             <outlet property="moviesCollectionView" destination="2OO-uN-9Og" id="Fak-Mp-RYq"/>
@@ -225,14 +231,15 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TV-Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zg-B2-Ekp">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="backgroundColor" red="0.062559486040609125" green="0.062559486040609125" blue="0.062559486040609125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gYL-fU-vHT" userLabel="TV-Shows Collection View">
                                                     <rect key="frame" x="0.0" y="33" width="320" height="208.5"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="backgroundColor" red="0.063293147208121847" green="0.063293147208121847" blue="0.063293147208121847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mcR-eJ-ARA">
                                                         <size key="itemSize" width="138" height="220"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -334,8 +341,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XYi-bE-ksv" id="bAQ-1k-Eqz">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" red="0.056772743025948036" green="0.060546189454443358" blue="0.066561146995939069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.052466687817258828" green="0.052466687817258828" blue="0.052466687817258828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -357,7 +365,7 @@
                                     <action selector="searchBarItemTapped:" destination="01a-TK-IXx" id="REq-wk-eVp"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="sittings" landscapeImage="sittings" largeContentSizeImage="sittings" id="sia-YG-dAZ">
+                            <barButtonItem title="Item" image="filter" landscapeImage="filter" largeContentSizeImage="filter" id="sia-YG-dAZ">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -366,7 +374,7 @@
                         <outlet property="TableView" destination="lx2-cZ-y26" id="at3-w8-UWk"/>
                         <outlet property="sortBarItem" destination="sia-YG-dAZ" id="9r7-PG-qak"/>
                         <segue destination="xX7-0D-AgI" kind="show" identifier="TheSelectedCategory" id="XKX-nH-tvp"/>
-                        <segue destination="FdI-g0-dvA" kind="show" identifier="showView" id="DA2-qQ-dwX"/>
+                        <segue destination="FdI-g0-dvA" kind="show" identifier="Trailer" id="DA2-qQ-dwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfo-GY-54l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -505,8 +513,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eZt-UV-Tl1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.066604536800000003" green="0.066604536800000003" blue="0.066604536800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="215" id="ty6-Vw-dU5" customClass="VidTableVCell" customModule="ShowTime" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="215"/>
@@ -558,7 +566,7 @@
                                             <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" lookupSuggestion="YES"/>
                                         </textView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="QJs-cu-kCo" firstAttribute="top" secondItem="daS-d1-scB" secondAttribute="top" constant="8" id="4H2-Qj-5gk"/>
                                         <constraint firstAttribute="trailing" secondItem="QJs-cu-kCo" secondAttribute="trailing" constant="4" id="DhA-V5-89f"/>
@@ -585,9 +593,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You might also like " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-XD-8pc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Vve-XH-nhT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dz5-Th-z0m">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="0.0" y="40" width="320" height="129"/>
+                                            <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DTY-Bm-0V3">
                                                 <size key="itemSize" width="50" height="50"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -602,19 +619,23 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </view>
+                                                    <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Dz5-Th-z0m" secondAttribute="bottom" id="Sia-L9-ZHJ"/>
-                                        <constraint firstItem="Dz5-Th-z0m" firstAttribute="leading" secondItem="yya-i5-xz2" secondAttribute="leading" id="mCp-eH-cJE"/>
-                                        <constraint firstAttribute="trailing" secondItem="Dz5-Th-z0m" secondAttribute="trailing" id="spT-4M-CS5"/>
-                                        <constraint firstItem="Dz5-Th-z0m" firstAttribute="top" secondItem="yya-i5-xz2" secondAttribute="top" id="t2O-0x-Ta5"/>
+                                        <constraint firstItem="gcv-XD-8pc" firstAttribute="top" secondItem="yya-i5-xz2" secondAttribute="top" id="AaQ-TJ-SyF"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dz5-Th-z0m" secondAttribute="trailing" id="U2b-b1-tjY"/>
+                                        <constraint firstItem="Dz5-Th-z0m" firstAttribute="leading" secondItem="yya-i5-xz2" secondAttribute="leading" id="YFN-Fe-vwn"/>
+                                        <constraint firstItem="Dz5-Th-z0m" firstAttribute="top" secondItem="gcv-XD-8pc" secondAttribute="bottom" id="f3Q-I4-q6X"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dz5-Th-z0m" secondAttribute="bottom" id="nc6-vq-Jcs"/>
+                                        <constraint firstItem="gcv-XD-8pc" firstAttribute="leading" secondItem="yya-i5-xz2" secondAttribute="leading" id="qu0-5q-pF4"/>
+                                        <constraint firstAttribute="trailing" secondItem="gcv-XD-8pc" secondAttribute="trailing" id="qui-7k-6P3"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -655,7 +676,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sittings" width="20" height="20"/>
+        <image name="filter" width="32" height="32"/>
         <image name="star" width="32" height="32"/>
     </resources>
 </document>

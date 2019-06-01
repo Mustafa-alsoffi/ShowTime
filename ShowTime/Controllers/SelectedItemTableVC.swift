@@ -18,6 +18,7 @@ class SelectedItemTableVC: UITableViewController {
     var currentMinText : String?
     var isPlaying = false
     var isTapped = false
+    var overView = ""
     var timeObserver: Any?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +59,14 @@ class SelectedItemTableVC: UITableViewController {
             // Setting player views
             setupPlayerView(cell: cell)
             player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
+            
             setupGradientLayer(cell: cell)
             
             return cell
         } else if indexPath.row == 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "DiscriptionCell", for: indexPath) as! DetailsTableVCell
-
+               cell.descriptionTextView.text = overView
             
             return cell
         }
